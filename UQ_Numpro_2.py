@@ -1,5 +1,5 @@
 # --------------------------------------------------------------
-#  Bayesian Linear Regression – FINAL, CLEAN, NO ERRORS
+#  Bayesian Linear Regression
 # --------------------------------------------------------------
 
 import numpy as np
@@ -70,8 +70,11 @@ plt.plot(X_new, mean, color="#1f77b4", lw=2, label="posterior mean")
 plt.fill_between(X_new, lower, upper, color="#1f77b4", alpha=0.3, label="95% CI")
 plt.xlabel("X")
 plt.ylabel("y")
-plt.title("Bayesian Linear Regression – Uncertainty Quantification")
+plt.title("Bayesian Linear Regression & Uncertainty Quantification")
 plt.legend()
 plt.grid(True, alpha=0.3)
 plt.tight_layout()
+plt.show()
+
+az.plot_trace(idata, var_names=["w", "b", "sigma"])
 plt.show()
